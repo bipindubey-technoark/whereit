@@ -49,7 +49,6 @@ function ForgotPassword() {
     const classes = useStyles();
     const { token } = useParams();
     const [visibility, setVisibility] = React.useState(false);
-    console.log('token',token)
     const handleSubmit = async(values,actions) => {
         try {
             const { data } = await axios.post('http://62.252.239.190:9003/auth/forgot-pass/check', {...values,token:token});
