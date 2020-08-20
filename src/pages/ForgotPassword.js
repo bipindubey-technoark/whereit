@@ -8,6 +8,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import { toast } from 'react-toastify';
 import * as Yup from "yup";
+import { useParams } from "react-router-dom";
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
@@ -46,11 +47,12 @@ const useStyles = makeStyles({
 // http://62.252.239.190:9003/
 function ForgotPassword() {
     const classes = useStyles();
+    const { token } = useParams();
     const [visibility, setVisibility] = React.useState(false);
-    
+    console.log('token',token)
     const handleSubmit = async(values,actions) => {
         try {
-            const { data } = await axios.post('http://62.252.239.190:9003/auth/forgot-pass/check', values);
+            const { data } = await axios.post('http://62.252.239.190:9003/auth/forgot-pass/check', {...values,token:token});
         } catch (error) {
             if (
                 error.response !== undefined &&

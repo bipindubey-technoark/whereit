@@ -10,9 +10,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      {/* <Redirect from="/forgotPass/:token" to="/auth/forgotPass/:token" /> */}
-      {/* <Redirect from="/" to="/forgotPass" /> */}
-      <Route path="/" component={forgotPassword} />
+      <Route path="/forgotPass/:token" component={forgotPassword} />
     </Switch>
   </Router>,
   document.getElementById("root")
