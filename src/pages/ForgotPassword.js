@@ -84,7 +84,7 @@ function ForgotPassword() {
                     </Typography>
                     <Formik
                         validationSchema={Yup.object({
-                            username: Yup.string()
+                            email: Yup.string()
                             .email("Invalid Email")
                             .required("Required*"),
                             password: Yup.string()
