@@ -53,6 +53,7 @@ function ForgotPassword() {
     const handleSubmit = async(values,actions) => {
         try {
             const { data } = await axios.post('http://62.252.239.190:9003/auth/forgot-pass/check', {...values,token:token});
+            toast.success('Password is reset successfully');
         } catch (error) {
             if (
                 error.response !== undefined &&
