@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import forgotPassword from './pages/ForgotPassword';
 import InitialPage from './pages/First';
+import 'react-toastify/dist/ReactToastify.css';
 
 const hist = createBrowserHistory();
 

@@ -44,7 +44,6 @@ const useStyles = makeStyles({
     },
 });
 
-// http://62.252.239.190:9003/
 function ForgotPassword() {
     const classes = useStyles();
     const { token } = useParams();
